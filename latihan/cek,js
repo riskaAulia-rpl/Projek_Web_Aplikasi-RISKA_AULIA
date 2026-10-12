@@ -1,0 +1,6 @@
+let x = 10;
+
+console.log("Hasil x + 5 adalah:");
+console.log(x + 5); // ini nampilin hasil hitung
+
+console.log("Isi celengan x sekarang adalah")

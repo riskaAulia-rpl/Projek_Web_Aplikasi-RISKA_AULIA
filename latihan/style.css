@@ -1,0 +1,57 @@
+body {
+    background-color: aliceblue;
+    margin: 0;
+    padding: 0;
+}
+.navigasi {
+    background-color: rgb(187, 223, 254);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.navigasi a {
+    text-decoration: none;
+    padding: 7px;
+    margin-right: 8px;
+    color: rgb(112, 63, 198);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+.navigasi ul {
+    list-style: none;
+    display: flex;
+    text-align: center;
+    margin-right: 11px;
+}
+.logo {
+    margin-left: 30px;
+    font-size: 50px;
+    color: rgb(59, 140, 216);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.hiasan {
+    background-color: rgba(131, 191, 255, 0.94);
+    text-align: center;
+    width: 90%;
+    justify-content: center;
+    border-radius: 10px;
+    margin-left: 75px;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+.pesan-makananminuman {
+    background-color: antiquewhite;
+    width: 90%;
+    margin-left: 75px;
+    border-radius: 10px;
+    height: 300px;
+    margin-top: 0px;
+}

@@ -1,0 +1,962 @@
+/* =========================================================
+   1. RESET & UNTUK FONT DASHBOARD (STYLE RISKA)
+   ========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #e5f2fb; /* Biru muda cerah vibes laut Patimban */
+    display: flex;
+    min-height: 100vh;
+    overflow-x: hidden; /* Mencegah scroll horizontal yang bikin risih */
+}
+
+/* =========================================================
+   2. SIDEBAR NAVIGASI KIRI (MEWAH & LOCK DI TEMPAT)
+   ========================================================= */
+.sidebar {
+    width: 260px;
+    background: linear-gradient(180deg, #0284c7 0%, #0369a1 100%);
+    color: white;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 4px 0 15px rgba(2, 132, 199, 0.15);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.sidebar-logo h2 {
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    border-bottom: 2px dashed rgba(255, 255, 255, 0.3);
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.sidebar-menu {
+    list-style: none;
+    flex-grow: 1;
+}
+
+.sidebar-menu li {
+    margin-bottom: 12px;
+}
+
+.sidebar-menu a {
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    padding: 14px 18px;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.sidebar-menu a.active, .sidebar-menu a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-weight: 600;
+    transform: translateX(5px);
+}
+
+/* Badge notifikasi angka merah di menu sidebar (mis. Hubungi Kami) */
+.sidebar-badge {
+    margin-left: auto;
+    background: #ef4444;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.25);
+}
+
+.btn-logout {
+    background: #ea580c; /* Oranye ceria khas pelampung */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 14px;
+    box-shadow: 0 4px 12px rgba(234, 88, 12, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-logout:hover {
+    background: #c2410c;
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   3. AREA KONTEN UTAMA SEBELAH KANAN (PERBAIKAN SCROLL MULUS)
+   ========================================================= */
+.main-content {
+    flex-grow: 1;
+    margin-left: 260px; /* Jarak pas dari sidebar */
+    padding: 30px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Memberikan jarak otomatis antar blok elemen */
+    overflow-y: auto; /* Biar scroll vertikalnya enteng dan lancar */
+    scroll-behavior: smooth;
+}
+
+/* Header Welcome Admin */
+.admin-header {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    border-left: 6px solid #38bdf8;
+    position: relative; /* Menghindari tabrakan layout */
+    width: 100%;
+}
+
+.admin-header h2 {
+    color: #0369a1;
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0;
+    padding-top: 5px;
+}
+
+.admin-header p {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+/* Box Ringkasan Info (Cards) - FIX BIAR GAK KETUTUP */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    width: 100%;
+    position: relative;
+    clear: both; /* Memastikan tidak ada penumpukan elemen di atasnya */
+}
+
+.stat-card {
+    background: rgb(2, 14, 44);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e0f2fe;
+}
+
+.stat-card h3 {
+    font-size: 14px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stat-card .stat-number {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-top: 10px;
+}
+
+   /* =========================================================
+    PENJINAK & STYLING UTUH KOTAK TABEL INDEX.PHP
+   ========================================================= */
+.table-box {
+    background: transparent !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    width: 100%;
+}
+
+/* Container utama tabel */
+.container-table {
+    width: 100%;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e2e8f0;
+}
+
+/* Header tabel (Kotak Hijau Tua) */
+.table-header-maritime {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #0f3d3e; /* Warna gelap estetik bawaan index asli */
+    padding: 25px;
+    color: white;
+}
+
+/* Kotak tempat icon jangkar */
+.header-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.15);
+    color: #38bdf8;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    font-size: 22px;
+    margin-right: 15px;
+}
+
+/* Wrapper teks di header tabel */
+.header-text {
+    flex-grow: 1;
+}
+
+.header-text h2 {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.header-text p {
+    color: #cbd5e1;
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+/* Badge status active pelabuhan di kanan atas tabel */
+.header-badge {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+}
+
+/* Lampu kedip hijau di badge */
+.live-pulse {
+    width: 8px;
+    height: 8px;
+    background: #22c55e;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 8px #22c55e;
+}
+
+/* Wrapper responsif tabel */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* Desain Inti Tabel */
+.maritime-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+/* Baris Judul Kolom (Th) */
+.maritime-table th {
+    background-color: #f8fafc;
+    color: #64748b;
+    padding: 16px 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: left;
+    border-bottom: 2px solid #edf2f7;
+    letter-spacing: 0.5px;
+}
+
+/* Isi baris data tabel (Td) */
+.maritime-table td {
+    padding: 18px 20px;
+    font-size: 14px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #334155;
+    text-align: left;
+    vertical-align: middle;
+}
+
+/* Efek baris selang-seling */
+.maritime-table tr:nth-child(even) td {
+    background-color: #f8fafc;
+}
+
+/* Efek sorot pas kursor lewat */
+.maritime-table tr:hover td {
+    background-color: #f0f9ff;
+    transition: background 0.2s ease;
+}
+
+/* Bagian paling bawah tabel footer */
+.table-footer-maritime {
+    background: #f8fafc;
+    padding: 15px 25px;
+    border-top: 1px solid #f1f5f9;
+    color: #94a3b8;
+    font-size: 12px;
+}
+/* ==================== STYLE KONTEN DASHBOARD UTAMA VIBES PATIMBAN ==================== */
+
+/* Container Grid untuk 4 Kartu Ringkasan */
+.main-cards-dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+/* Desain Dasaran Kartu */
+.card-dash {
+    background-color: #1e293b; /* Abu-abu gelap komponen maritim */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.card-dash:hover {
+    transform: translateY(-4px);
+}
+
+/* Warna Garis Tepi Kiri Tiap Kartu */
+.blue-border { border-left: 5px solid #2563eb; }
+.teal-border { border-left: 5px solid #0d9488; }
+.amber-border { border-left: 5px solid #f59e0b; }
+.purple-border { border-left: 5px solid #a855f7; }
+
+.card-dash-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #94a3b8;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.card-dash h1 {
+    font-size: 26px;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.card-dash .material-icons-outlined {
+    font-size: 26px;
+    opacity: 0.8;
+}
+
+/* Layout Grid Kolom Grafik (Line Kiri, Donut Kanan) */
+.charts-grid-dashboard {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+@media (max-width: 992px) {
+    .charts-grid-dashboard { grid-template-columns: 1fr; }
+}
+
+/* Box Wadah Grafik */
+.chart-box-dash {
+    background-color: #1e293b;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.chart-box-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #38bdf8; /* Biru cerah maritim */
+}
+
+.chart-box-wrapper {
+    position: relative;
+    width: 100%;
+    height: 260px; /* Batas tinggi grafik biar proposional */
+}
+
+/* Box Wadah Tabel Log Aktivitas */
+.log-activity-box {
+    background-color: #1e293b;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+}
+
+.log-activity-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.log-activity-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+}
+
+.log-activity-table th {
+    text-align: left;
+    padding: 12px;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #38bdf8;
+    font-weight: 600;
+    border-bottom: 2px solid rgba(255,255,255,0.08);
+}
+
+.log-activity-table td {
+    padding: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: #e2e8f0;
+}
+
+.log-activity-table tr:hover {
+    background-color: rgba(255, 255, 255, 0.01);
+}
+
+/* Badge Status Log */
+.log-badge {
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+}
+.log-success { background-color: rgba(13, 148, 136, 0.2); color: #2dd4bf; }
+.log-pending { background-color: rgba(245, 158, 11, 0.2); color: #fbbf24; }
+
+ /* =========================================================
+    EDIT TAMPILAN HALAMAN KARYAWAN
+   ========================================================= */
+/* ==================== LAYOUT HALAMAN KARYAWAN KUSTOM ==================== */
+.kr-top-layout {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+/* Bagian Grid untuk Menampung 2 Card Saja */
+.kr-card-grid {
+    flex: 2;
+    align-items: stretch;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Desain Dasaran Card */
+.kr-stat-card {
+    background: #111c2a;
+    border-radius: 12px;
+    padding: 20px;
+    flex: 1;
+    height: auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.kr-card-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.kr-card-txt h5 {
+    margin: 0 0 8px 0;
+    color: #94a3b8;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.kr-card-txt h3 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.kr-card-txt h3 span {
+    font-size: 16px;
+    font-weight: 400;
+    color: #64748b;
+}
+
+/* Variasi Warna Icon Card */
+.card-teal .kr-card-icon i { color: #0d9488; font-size: 32px; opacity: 0.8; }
+.card-teal .kr-card-txt h3 { color: #2dd4bf; }
+.card-purple .kr-card-icon i { color: #a855f7; font-size: 32px; opacity: 0.8; }
+.card-purple .kr-card-txt h3 { color: #c885fb; }
+
+/* Widget Kanan Pemenuh Ruang Kosong */
+.kr-widget-announcement {
+    flex: 1;
+    background: #111c2a;
+    border-radius: 12px;
+    padding: 20px;
+    border-left: 4px solid #f59e0b;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.kr-widget-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: #f1f5f9;
+    margin-bottom: 12px;
+    font-size: 15px;
+}
+
+.kr-widget-content p {
+    margin: 5px 0;
+    font-size: 13.5px;
+    color: #cbd5e1;
+}
+
+.kr-widget-content small {
+    display: block;
+    margin-top: 10px;
+    color: #64748b;
+    line-height: 1.4;
+}
+
+.kr-badge-success {
+    background: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+/* AREA BOX TABEL */
+.kr-table-box {
+    background: #111c2a;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.kr-table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.kr-table-header h4 {
+    margin: 0;
+    color: #f1f5f9;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.kr-btn-add {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.kr-btn-add:hover { background: #1d4ed8; }
+
+/* STRUKTUR TABEL ESTETIK */
+.kr-table-responsive { overflow-x: auto; }
+.kr-custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+.kr-custom-table th {
+    background: #090f17;
+    color: #94a3b8;
+    font-weight: 600;
+    padding: 14px 12px;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #1e293b;
+}
+
+.kr-custom-table td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #1e293b;
+    vertical-align: middle;
+}
+
+.kr-custom-table tr:hover { background: rgba(255, 255, 255, 0.02); }
+
+/* Badge Khusus Elemen Kolom */
+.kr-emp-name { color: #f8fafc; font-weight: 600; }
+.kr-badge-uid {
+    background: #1e293b;
+    color: #94a3b8;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 12px;
+}
+.kr-badge-job {
+    background: rgba(13, 148, 136, 0.15);
+    color: #2dd4bf;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+}
+.kr-txt-money { color: #22c55e; font-weight: 500; }
+.kr-txt-tunjangan { color: #38bdf8; }
+.kr-empty-row { text-align: center; padding: 30px !important; color: #64748b; }
+
+/* Status Badge */
+.kr-status-active {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+.kr-status-pending {
+    background: rgba(234, 179, 8, 0.15);
+    color: #facc15;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* Tombol Aksi */
+.kr-action-flex { display: flex; gap: 8px; justify-content: center; }
+.kr-btn-edit, .kr-btn-delete {
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+.kr-btn-edit { background: rgba(234, 179, 8, 0.1); color: #facc15; }
+.kr-btn-edit:hover { background: #eab308; color: #111c2a; }
+.kr-btn-delete { background: rgba(239, 68, 68, 0.1); color: #f87171; }
+.kr-btn-delete:hover { background: #ef4444; color: white; }
+.text-center { text-align: center; }
+/* Container untuk Search dan Tombol */
+.kr-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Kotak Pencarian Aesthetic */
+.kr-search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.kr-search-box .search-icon {
+    position: absolute;
+    left: 12px;
+    color: #64748b;
+    font-size: 14px;
+    pointer-events: none;
+}
+
+.kr-search-box input {
+    background: #0f172a;
+    color: #f1f5f9;
+    border: 1px solid #334155;
+    padding: 8px 12px 8px 36px;
+    border-radius: 6px;
+    font-size: 13px;
+    width: 200px;
+    transition: all 0.3s ease;
+}
+
+/* Efek pas kotak diklik (Focus) */
+.kr-search-box input:focus {
+    outline: none;
+    border-color: #2563eb;
+    width: 250px; /* Melebar sedikit pas diketik biar keren */
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+.kr-table-header {
+    display: flex;
+    justify-content: space-between; /* Ini yang bertugas memisahkan judul ke kiri & tombol ke kanan */
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+/* TAMBAH DATA KARYAWAN */
+/* Styling form dalam modal Bootstrap 5 */
+.modal-content .form-control,
+.modal-content .form-select {
+    background-color: #0b131f !important;
+    border: 1px solid #22344d !important;
+    color: #f1f5f9 !important;
+    font-size: 13px;
+}
+
+/* Mengubah warna teks placeholder ketikan pas kosong */
+.modal-content .form-control::placeholder {
+    color: #475569 !important;
+}
+
+/* Menghilangkan background putih bawaan browser pada dropdown option */
+.modal-content .form-select option {
+    background-color: #111c2a !important;
+    color: #f1f5f9 !important;
+}
+
+.modal-content .form-control:focus, 
+.modal-content .form-select:focus {
+    border-color: #2563eb !important;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2) !important;
+    color: #f1f5f9 !important;
+}
+/* END TAMBAH DATA KARYAWAN */
+
+/* TABEL VERIFIKASI MEMBER */
+/*menjadi css inline*/
+/* END TABEL VERIFIKASI MEMBER */
+
+/* =========================================================
+   RESPONSIVE ADMIN PANEL — KHUSUS TAMPILAN MOBILE
+   Semua aturan di bawah ini dibungkus @media, jadi TIDAK
+   mempengaruhi tampilan desktop sama sekali.
+   ========================================================= */
+
+/* Tombol hamburger & overlay disembunyikan dulu di desktop */
+.mobile-toggle-btn {
+    display: none;
+}
+
+.sidebar-overlay {
+    display: none;
+}
+
+@media (max-width: 900px) {
+
+    /* ---- Sidebar jadi panel geser (drawer) ---- */
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        width: 260px;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    /* ---- Tombol buka menu (☰) mengambang di kiri atas ---- */
+    .mobile-toggle-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 14px;
+        left: 14px;
+        width: 44px;
+        height: 44px;
+        background: #0369a1;
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        font-size: 18px;
+        box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);
+        z-index: 110;
+        cursor: pointer;
+    }
+
+    /* ---- Lapisan gelap di belakang sidebar saat aktif ---- */
+    .sidebar-overlay.show {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.45);
+        z-index: 99;
+    }
+
+    /* ---- Konten utama full width, beri jarak atas untuk tombol menu ---- */
+    .main-content {
+        margin-left: 0;
+        padding: 70px 15px 20px;
+        width: 100%;
+    }
+
+    /* ---- Kartu ringkasan & grid jadi satu kolom ---- */
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .charts-grid-dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    /* ---- Layout halaman Data Karyawan ---- */
+    .kr-top-layout {
+        flex-direction: column;
+    }
+
+    .kr-card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* ---- Header tabel & area pencarian: tumpuk ke bawah, tidak kepotong ---- */
+    .table-header-maritime {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .kr-table-header,
+    .header-badge {
+        flex-wrap: wrap;
+    }
+
+    .kr-header-actions {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .kr-search-box {
+        width: 100%;
+    }
+
+    .kr-search-box input,
+    .kr-search-box input:focus {
+        width: 100%;
+    }
+
+    /* ---- Tabel tetap bisa discroll ke samping, tidak merusak layout ---- */
+    .table-responsive,
+    .kr-table-responsive {
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* ---- Log Aktivitas Sistem (Dashboard): dipertahankan sebagai
+       tabel asli (sama seperti versi desktop), bedanya di HP kontainernya
+       bisa digeser ke kanan/kiri (scroll horizontal) karena kolomnya
+       tetap 5 dan tidak muat di layar kecil. ---- */
+    .log-activity-box {
+        padding: 15px;
+    }
+
+    .log-activity-scroll {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .log-activity-table {
+        min-width: 640px;
+        width: 100%;
+    }
+
+    /* ---- Panel "Distribusi Jenis Layanan" (Data Member): kotak info di
+       sampingnya pakai flex: 0 0 auto, jadi lebarnya ikut lebar teks
+       terpanjang alih-alih ikut lebar layar -> kalimat deskripsinya
+       nyelonong ke kanan sampai keluar kartu di HP. Dipaksa jadi lebar
+       penuh & teks dibiarkan wrap normal. ---- */
+    .distribusi-layanan-panel {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 20px !important;
+    }
+
+    .distribusi-layanan-info {
+        flex: 1 1 100% !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .distribusi-layanan-desc {
+        white-space: normal;
+        overflow-wrap: break-word;
+        text-align: center;
+    }
+
+    .distribusi-layanan-info h4 {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .distribusi-layanan-chart {
+        margin: 6px auto 0;
+    }
+
+    /* ---- Halaman Profil Admin: kartu foto & kartu form dipaksa
+       min-width 280px/350px lewat inline style, padahal ruang di HP
+       lebih sempit dari itu -> seluruh halaman meluber ke samping dan
+       label form kepotong di kiri. Dipaksa tumpuk 1 kolom, lebar
+       penuh, dan grid form-nya jadi 1 kolom juga. ---- */
+    .profile-layout {
+        flex-direction: column !important;
+    }
+
+    .profile-card,
+    .profile-details {
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 20px !important;
+        box-sizing: border-box !important;
+    }
+
+    .profile-form-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .profile-form-span2 {
+        grid-column: span 1 !important;
+    }
+}

@@ -1,0 +1,59 @@
+body {
+    background-color: aliceblue;
+}
+.judul-besar {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(201, 80, 143);
+    margin-top: 20px;
+}
+.tambah-anak {
+    background-color: rgb(229, 215, 248);
+    border-radius: 5pc;
+    text-align: center;
+    height: 35px;
+    font-weight: bold;
+    margin: 50px 0 0 86%;
+}
+.tambah-anak a {
+    text-decoration: none;
+}
+.pembungkus-tabel {
+    width: 90%;
+    height: 50%;
+    margin: 5px 0 0 70px ;
+}
+.pembungkus-tabel tr {
+    background-color: rgb(219, 232, 253);
+}
+.pembungkus-tabel td {
+    background-color: rgb(234, 251, 175);
+    padding: 6px;
+}
+.tombol-aksi a {
+    text-decoration: none;
+}
+.edit {
+    color: rgb(203, 127, 11);
+    font-weight: bold;
+}
+.hapus {
+    color: rgb(191, 9, 9);
+    font-weight: bold;
+}
+.tombol-edit-data {
+    background-color: red;
+    margin-left: 5px;
+}
+.tombol-edit-data a {
+    text-decoration: none;
+}
+.tombol-simpan-data {
+    background-color: rgb(171, 241, 175);
+    font-weight: bold;
+}
+.pembungkus-form-edit {
+    margin: 0 0 0 45%;
+    background-color: antiquewhite;
+    width: 11%;
+}

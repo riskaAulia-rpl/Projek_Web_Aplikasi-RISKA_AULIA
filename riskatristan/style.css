@@ -1,0 +1,48 @@
+body {
+    background-color: antiquewhite;
+     margin: 0px;
+     padding: 0px;
+     width: 100%;
+}
+.navigasi {
+    background-color: rgb(76, 46, 8);
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+    display: flex;
+    margin: 10px;
+}
+.navigasi ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+}
+.navigasi li {
+    justify-content: flex-end;
+    display: flex;
+    
+}
+.navigasi a {
+    color: aliceblue;
+    text-decoration: none;
+    margin: 15px;
+}
+.logo {
+    color: rgb(252, 254, 255);
+    font-size: 50px;
+    margin: 10px;
+}
+.gambar {
+    width: 100%;
+    height: 800px;
+}
+.tentang {
+    text-align: center;
+}
+.img1 {
+    width: 400px;
+    height: 250px;
+    border-radius: 15px;
+    padding: 5px;
+    margin-left: 5px;
+}
